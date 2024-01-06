@@ -1,0 +1,65 @@
+@use "../../variables"
+@use "../../base"
+
+.form
+  &__box
+    display: flex
+    justify-content: center
+    align-items: center
+  &__contact
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: auto
+    grid-template-areas: "name""lastname""email""message""privacy""submit"
+    padding: variables.$size-s
+    width: 600px
+    gap: variables.$size-l
+  &__label
+    padding-inline: variables.$size-s
+  &__label-name
+    grid-area: name
+  &__label-lastname
+    grid-area: lastname
+  &__label-email
+    grid-area: email
+  &__label-message
+    grid-area: message
+  &__label-privacy
+    grid-area: privacy
+    align-items: center
+    display: flex
+    &__text
+      display: inline
+    &--link
+      font-weight: bold
+      color: variables.$color-blue
+      padding: 0
+  .button-submit
+    grid-area: submit
+  &__input
+    display: block
+    width: 15rem
+    margin-top: variables.$size-m
+    height: variables.$size-xl
+    border-radius: variables.$size-s
+    padding-inline: variables.$size-s
+    box-sizing: border-box
+    &-checkbox
+      display: inline
+      width: variables.$size-m
+      margin-top: 0
+      margin-right: variables.$size-s
+    &-email
+      width: 100%
+    &-message
+      padding-top: variables.$size-s
+      width: 100%
+      height: 10rem
+  .button-submit
+    background-color: variables.$color-blue
+    color: variables.$color-white
+    border: variables.$color-blue
+    height: 3rem
+    width: 7rem
+    border-radius: variables.$size-m
+

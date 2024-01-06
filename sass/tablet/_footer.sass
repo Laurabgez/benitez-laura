@@ -1,0 +1,53 @@
+@use "../variables"
+@use "../base"
+
+.footer
+  background-color: variables.$color-grey
+  & > .container
+    display: grid
+    grid-template-columns: 8rem 1fr 1fr 1fr 4rem
+    grid-template-rows: 1fr 4rem
+  &__section__title
+    color: variables.$color-red
+    font-weight: bold
+    margin-bottom: 0
+    text-align: center
+  &__section__box
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  &__logo
+    width: 8rem
+    height: 8rem
+  &__rrss__list
+    display: flex
+    flex-direction: column
+    .rrss__list__unit
+      width: variables.$size-xl
+      height: variables.$size-xl
+      padding: variables.$size-s
+      transition: 1s
+  &__legal__text__nav, &__menu__nav
+    margin-top: variables.$size-s
+    &__list
+      display: flex
+      flex-direction: column
+  &__up__icon
+    grid-column: 5 / 6
+    grid-row: 2 / 3
+    width: 100%
+    display: flex
+    justify-content: end
+    &__box
+      width: variables.$size-xxl
+      height: variables.$size-xxl
+      animation-name: ani-up
+      animation-duration: 1s
+      animation-direction: alternate
+      animation-iteration-count: infinite
+  &__copyright
+    grid-column: 2 / 4
+    grid-row: 2 / 3
+    text-align: center
+    margin-top: variables.$size-xl

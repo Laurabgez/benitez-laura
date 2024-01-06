@@ -1,0 +1,65 @@
+@use "../../variables"
+@use "../../base"
+
+.form
+  &__box
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-block: variables.$size-xxl
+  &__contact
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-template-rows: auto
+    grid-template-areas: "name lastname""email email""message message""privacy privacy""submit submit"
+    gap: variables.$size-m
+    width: 600px
+  &__label
+    padding-inline: variables.$size-s
+  &__label-name
+    grid-area: name
+  &__label-lastname
+    grid-area: lastname
+  &__label-email
+    grid-area: email
+  &__label-message
+    grid-area: message
+  &__label-privacy
+    grid-area: privacy
+    align-items: center
+    display: flex
+    &__text
+      display: inline
+    &--link
+      font-weight: bold
+      color: variables.$color-blue
+      padding: variables.$size-s
+      padding-left: 0
+  .button-submit
+    grid-area: submit
+  &__input
+    display: block
+    width: 15rem
+    margin-top: variables.$size-m
+    height: variables.$size-xl
+    border-radius: variables.$size-s
+    padding-inline: variables.$size-s
+    box-sizing: border-box
+    &-checkbox
+      display: inline
+      width: variables.$size-m
+      margin-top: 0
+      margin-right: variables.$size-s
+    &-email
+      width: 100%
+    &-message
+      padding-top: variables.$size-s
+      width: 100%
+      height: 10rem
+  .button-submit
+    background-color: variables.$color-blue
+    color: variables.$color-white
+    border: variables.$color-blue
+    height: 3rem
+    width: 7rem
+    border-radius: variables.$size-m

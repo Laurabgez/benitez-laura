@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!--tipografia-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat+Alternates:ital,wght@0,300;0,400;1,600&display=swap" rel="stylesheet">
+        <!--Normalizador-->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <!--Vinculo css-->
+        <link href="css/mobile.css" rel="stylesheet" media="all and (max-width: 600px)">
+        <link href="css/desktop.css" rel="stylesheet" media="all and (min-width: 600px)">
+        <link rel="stylesheet" href="css/tablet.css"  media="all and (min-width: 600px) and (max-width: 1050px)">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <!--Alpine-->
+        <script src="https://unpkg.com/alpinejs" defer></script>
+        <!--scroll-->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <title>Expresión artística a través de la arcilla</title>
+        <link rel="icon" type="image/png" href="img/favicon.webp">
+        <link rel="apple-touch-icon" href="/static/img/apple-touch-icon/touch-icon-iphone.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/static/img/apple-touch-icon/touch-icon-ipad.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/static/img/apple-touch-icon/touch-icon-iphone-retina.png">
+        <link rel="apple-touch-icon" sizes="167x167" href="/static/img/apple-touch-icon/touch-icon-ipad-retina.png">
+        <meta name="theme-color" content="#E5E5E5">
+        <meta name="author" content="Laura Benítez">
+        <meta name="description" content=" Hola! Bienvenidos a mi primera página web, soy Laura Benítez, estudiante de diseño web, en este proyecto te sumergirás en un portafolio creativo y artesanal, donde muestro mis habilidades artísticas en el mundo de la arcilla, ¿Te animas a descubrirlo?">
+    </head>
+    <body x-data="{ isUpScroll: true, lastPosScroll: 0, isTopScroll: true }">
+        <header class="header" x-data="{show: false}"
+                @scroll.window="(window.pageYOffset === 0 ? isTopScroll = true : isTopScroll = false, window.pageYOffset > lastPosScroll ? (isUpScroll = false, lastPosScroll =  window.pageYOffset) : (isUpScroll = true, lastPosScroll =  window.pageYOffset))"
+                :class="isUpScroll ? isTopScroll ? 'header--transparent header--show' : 'header--show' : ''">
+            <div class="container">
+                <section class="header__logo__section">
+                    <a href="#inicio" role="heading" aria-label="1"><img src="img/logo%20proyecto.png" alt="Logo" class="img header__logo__img" ></a>
+                    <a href="#inicio" class="hidden__link">Ir al contenido</a>
+                </section>
+                <section class="header__nav__section">
+                    <button class="button header__nav__open has-mobile" @click="show = !show">
+                        <img src="img/menu.svg" alt="icono menú hamburguesa" class="img hamburger__icon">
+                    </button>
+                    <nav class="header__nav"  :class="show ? 'nav--show' : ''">
+                        <button class="button  button__header__nav__close has-mobile" @click="show = false"><img src="img/close.svg" alt="icono cerrar menu" class="img close__icon"></button>
+                        <ul class="ul__reset header__nav__list" @click="show = !show">
+                            <li><a href="#inicio" class="link header__nav__link">Home</a></li>
+                            <li><a href="#arcilla" class="link header__nav__link">Arcilla</a></li>
+                            <li><a href="#proyectos" class="link header__nav__link">Proyectos</a></li>
+                            <li><a href="#sobreMi" class="link header__nav__link">Sobre Mi</a></li>
+                            <li><a href="#contacto" class="link header__nav__link">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </section>
+                <section class="header__rrss__section">
+                    <div class="rrss__box">
+                        <ol class="ul__reset header__rrss__list">
+                            <li>
+                                <a href="https://github.com/Laurabgez" class="link header__rrss__link" target="_blank">
+                                    <img src="img/git-hub-%20white.svg" alt="icono github" class="img header__rrss__image">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/" class="link header__rrss__link" target="_blank">
+                                    <img src="img/twitter-white.svg" alt="icono twitter" class="img header__rrss__image header__rrss__image--twitter"
+                                    >
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/" class="link header__rrss__link" target="_blank">
+                                    <img src="img/instagram%20-white.svg" alt="icono instagram" class="img header__rrss__image header__rrss__image--insta">
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+            </div>
+        </header>
+            <main id="inicio">
+                <section class="hero" x-data="{ ocultarArticulo: false}">
+                    <div class="hero__background">
+                        <img src="img/joyero-cara-caparoja.webp" aria-hidden="true" alt="Joyero cara abstracto" class="img img__hero img__hero--1">
+                        <img src="img/posavasos-cuadros-caparoja.webp" aria-hidden="true" alt="Posavasos cuadros curvados azules" class="img img__hero img__hero--2 ">
+                        <img src="img/polaroid-corazon-caparoja.webp" aria-hidden="true" alt="portafotos polaroid forma de corazon" class="img img__hero img__hero--3">
+                        <img src="img/joyero-koi.webp" aria-hidden="true" alt="Joyero ovalado con peces koi pintados" class="img img__hero img__hero--4 has-desktop">
+                        <img src="img/joyero-koi-caparoja.webp" aria-hidden="true" alt="Joyero ovalado con peces koi pintados" class="img img__hero img__hero--4 has-mobile">
+                        <img src="img/joyero-flor-caparoja.webp" aria-hidden="true" alt="joyero con forma de flor morado pequeño" class="img img__hero img__hero--5">
+                    </div>
+                    <div class="container">
+                        <h2 class="hero__title">Expresión artística a través de la arcilla </h2>
+                    </div>
+                    <section class="cookies__section">
+                        <div class="container__cookies" :class="ocultarArticulo ? 'container--none' : '' " >
+                            <div class="container">
+                                <form class="cookies" >
+                                    <label class="form__text">
+                                        Este sitio web utiliza cookies para mejorar tu experiencia de navegación. Al continuar, aceptas el uso de cookies de acuerdo con la política de privacidad.
+                                    </label>
+                                    <div class="button__cookies__box">
+                                        <button type="button" class="button button-cookies" @click="ocultarArticulo = true">
+                                            Aceptar
+                                        </button>
+                                        <button type="button" class="button button-cookies"  @click="ocultarArticulo = true">
+                                            Rechazar
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+                 </section>
+                <section class="arcilla">
+                    <div class="container">
+                    <h3 class="title__section" id="arcilla" data-aos="fade-right" data-aos-duration="2000">¿Qué es la arcilla?</h3>
+                    <section class="arcilla__description">
+                        <p class="text arcilla__text">
+                            La arcilla de secado al aire es un tipo de arcilla que, una vez moldeada, se seca naturalmente sin necesidad de cocción en horno. Su proceso de secado al aire la hace conveniente para proyectos artísticos y manualidades sin requerir equipos adicionales.
+                        </p>
+                        <img src="img/arcilla.png" alt="arcilla húmeda sobre manos formando un corazón" class=" img arcilla__img">
+                    </section>
+                    <section class="arcilla__cards">
+                        <h3 class="subtitle">Propiedades</h3>
+                        <div class="cards">
+                            <div class="cards__item" data-aos="flip-left" data-aos-delay="300">
+                                <p class="cards__name">Maleable</p>
+                                <span class="name__chinesse">可塑性的</span>
+                            </div>
+                            <div class="cards__item" data-aos="flip-left" data-aos-delay="600" >
+                                <p class="cards__name">Versátil</p>
+                                <span class="name__chinesse">多才多艺</span>
+                            </div>
+                            <div class="cards__item" data-aos="flip-left" data-aos-delay="900">
+                                <p class="cards__name">Sedimentario</p>
+                                <span class="name__chinesse">沉积岩</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            <section class="proyectos"  x-data="{tabActive: 'general'}">
+                <div class="container">
+                    <h3 id="proyectos" class="title__section">Proyectos</h3>
+                    <nav>
+                        <ul class="ul__reset nav__proyectos">
+                            <li>
+                                <button class="button__gallery button__gallery-start button__gallery-active" @click="tabActive = 'general'">General</button>
+                            </li>
+                            <li>
+                                <button class="button__gallery" @click="tabActive = 'posavasos'">Posavasos</button>
+                            </li>
+                            <li>
+                                <button class="button__gallery" @click="tabActive = 'joyero'">Joyeros</button>
+                            </li>
+                            <li>
+                                <button class="button__gallery button__gallery-end" @click="tabActive = 'portafotos'">Portafotos</button>
+                            </li>
+                        </ul>
+                    </nav>
+                    <section class="masonry">
+                        <img src="img/joyero-cara.webp" alt="joyero cara abstracta" class="img masonry__image masonry__image--1 masonry__image--radius-right" :class="tabActive == 'general'|| tabActive == 'joyero' ? 'masonry__image--show' : '' ">
+                        <img src="img/posavasos-vaca%20.webp" alt="Posavasos estampado vaca" class="img masonry__image masonry__image--2 masonry__image--radius-right " :class="tabActive == 'general' || tabActive == 'posavasos' ? 'masonry__image--show' : '' ">
+                        <img src="img/posavasos-montanya.webp" alt="posavasos sombras montaña" class="img masonry__image masonry__image--3 masonry__image--radius-left has-desktop" :class="tabActive == 'general' || tabActive == 'posavasos' ? 'masonry__image--show' : '' ">
+                        <img src="img/portafotos-morado.webp" alt="" class="  img masonry__image masonry__image--4 has-desktop" :class="tabActive == 'general' || tabActive == 'portafotos' ? 'masonry__image--show' : '' ">
+                        <img src="img/joyero-flor.webp" alt="joyero con forma de flor morado" class="img masonry__image masonry__image--5 masonry__image--radius-right" :class="tabActive == 'general' || tabActive == 'joyero' ? 'masonry__image--show' : '' ">
+                        <img src="img/portafotos-yingyang.webp" alt="Portafotos ying yang" class="  img masonry__image masonry__image--6 has-desktop" :class="tabActive == 'general' || tabActive == 'portafotos' ? 'masonry__image--show' : '' ">
+                        <img src="img/polaroid-corazon.webp" alt="Portafotos polaroid en forma de corazon" class="img masonry__image masonry__image--7 masonry__image--radius-right" :class="tabActive == 'general' || tabActive == 'portafotos' ? 'masonry__image--show' : '' ">
+                        <img src="img/portafotos-arco.webp" alt="Portafotos en forma de arco" class=" img masonry__image masonry__image--8 has-desktop " :class="tabActive == 'general' || tabActive == 'portafotos' ? 'masonry__image--show' : '' ">
+                        <img src="img/joyero-koi.webp" alt="joyero con silueta de peces koi" class="img masonry__image masonry__image--9 masonry__image--radius-right" :class="tabActive == 'general' || tabActive == 'joyero' ? 'masonry__image--show' : '' ">
+                        <img src="img/portafotos-doble.webp" alt="Portafotos doble de polaroid color crema con corazon pequeño" class=" img masonry__image masonry__image--10 has-desktop"  :class="tabActive == 'general' || tabActive == 'portafotos' ? 'masonry__image--show' : '' ">
+                        <img src="img/joyero-manta.webp" alt="Joyero amplio color gris" class="img masonry__image masonry__image--11 masonry__image--radius-right" :class="tabActive == 'general' || tabActive == 'joyero' ? 'masonry__image--show' : '' ">
+                        <img src="img/posavasos-rosa.webp" alt="Posavasos mar rosa" class="img masonry__image masonry__image--12 masonry__image--radius-right has-desktop " :class="tabActive == 'general' || tabActive == 'posavasos' ? 'masonry__image--show' : '' ">
+                        <img src="img/posavasos-cuadros.webp" alt="Posavasos de cuadros azules" class=" img masonry__image masonry__image--13 has-desktop" :class="tabActive == 'general' || tabActive == 'posavasos' ? 'masonry__image--show' : '' ">
+                    </section>
+                </div>
+            </section>
+            <section class="aboutme">
+                <div class="container">
+                    <h3 id="sobreMi" class="title__section" data-aos="fade-right" data-aos-duration="2000">Sobre mí</h3>
+                </div>
+                <div class="aboutme__marco">
+                    <div class="container">
+                        <section class="aboutme__text">
+                            <p class="text ">
+                                Soy Laura, y este es mi primer proyecto en lo que a diseño se refiere.
+                            </p>
+                            <p class="text ">
+                                Hice la carrera universitaria de Nutrición humana, y me di cuenta de que ser nutricionista no era mi destino.
+                            </p>
+                            <p class="text">
+                                Es complicado darse cuenta después de 4 años de estudio, pero lo que si tenía claro, es que por muy pronto o tarde que me diese cuenta, no iba a dedicar mi vida en algo en lo que sentía que no era para mí.
+                            </p>
+                            <p class="text">
+                                Sin embargo, retomar caminos no es retroceder, sino aprender
+                            </p>
+                            <blockquote class="blockquote">
+                                <p class="text aboutme__cite">
+                                    "En el caos de la vida, a veces perdernos es la forma de encontrarnos." - Susan Sontag
+                                </p>
+                            </blockquote>
+                        </section>
+                        <section class="aboutme__image__section">
+                            <img src="img/sobre-mi.webp" alt="retrato laura" class="img aboutme__image">
+                        </section>
+                    </div>
+                </div>
+            </section>
+            <section class="contacto">
+                <div class="container">
+                    <h3 id="contacto" class="title__section">Contacto</h3>
+                    <p>Te animo a que pruebes el modelado de arcilla y dejes volar tu imaginación, para cualquier consulta, no dudes en contactar conmigo:</p>
+                    <section class="form">
+                        <h4 class="subtitle">Formulario</h4>
+                        <div class="form__box">
+                            <form class="form__contact" action="https://formspree.io/f/xqkrzape"
+                                  method="POST" >
+                                <label class="form__label form__label-name ">Nombre
+                                    <input tabindex="1" type="text" class="form__input" required>
+                                </label>
+                                <label class="form__label form__label-lastname">Apellidos
+                                    <input type="text" class="form__input" tabindex="2" required>
+                                </label>
+                                <label class="form__label form__label-email">Correo
+                                    <input type="email" name="email" class="form__input form__input-email" tabindex="3" required>
+                                </label>
+                                <label class="form__label form__label-message">Mensaje
+                                    <textarea name="message" tabindex="4" class="form__input form__input-message"></textarea>
+                                </label>
+                                <label class="form__label form__label-privacy">
+                                    <input type="checkbox" class="form__input form__input-checkbox" required>
+                                    <p class="form__label-privacy__text">Acepto las <a href="#" class="link form__label-privacy--link"> condiciones de uso y privacidad</a></p>
+                                </label>
+                                <div>
+                                    <button type="submit" class="button button-submit">Enviar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__section__box">
+                    <section class="footer__logo">
+                        <a href="#inicio" class="link">
+                            <img src="img/logo-azul.png" alt="icono logo azul" class="img">
+                        </a>
+                    </section>
+                </div>
+                <section class="footer__rrss">
+                    <div class="footer__section__box footer__section__box-rrss">
+                        <h3 class="footer__section__title">Social Media </h3>
+                        <ol class="ul__reset footer__rrss__list" >
+                            <li class="rrss__list__unit">
+                                <a href="https://github.com/Laurabgez" target="_blank">
+                                    <img src="img/git-hub-.svg" alt="icono Github pulsable" class="img">
+                                </a>
+                            </li>
+                            <li class="rrss__list__unit">
+                                <a href="https://twitter.com/"  target="_blank">
+                                    <img src="img/twitter.svg" alt="icono twitter pulsable" class="img">
+                                </a>
+                            </li>
+                            <li class="rrss__list__unit">
+                                <a href="https://www.instagram.com/"  target="_blank">
+                                    <img src="img/instagram.svg" alt="icono instagram pulsable" class=" img">
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
+                <section class="footer__legal__text">
+                    <div class="footer__section__box">
+                        <h3 class="footer__section__title">Textos legales</h3>
+                        <nav class="footer__legal__text__nav">
+                            <ul class="ul__reset footer__legal__text__nav__list">
+                                <li class="footer__legal__text__nav__list__item">
+                                    <a href="legal-text/politica-privacidad.html"class="link footer__legal__text__nav__link">Política privacidad</a>
+                                </li>
+                                <li class="footer__legal__text__nav__list__item">
+                                    <a href="legal-text/textos-legales.html" class="link footer__legal__text__nav__link">Aviso legal</a>
+                                </li>
+                                <li class="footer__legal__text__nav__list__item">
+                                    <a href="legal-text/cookies.html" class="link footer__legal__text__nav__link">Política cookies</a>
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+                <section class="footer__menu">
+                    <div class="footer__section__box">
+                        <h3 class="footer__section__title">Menú</h3>
+                        <nav class="footer__menu__nav">
+                            <ul class="ul__reset footer__menu__nav__list">
+                                <li>
+                                    <a href="#inicio" class="link ">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#arcilla" class="link">Arcilla</a>
+                                </li>
+                                <li>
+                                    <a href="#proyectos" class="link">Proyectos</a>
+                                </li>
+                                <li>
+                                    <a href="#sobreMi" class="link">Sobre Mí</a>
+                                </li>
+                                <li>
+                                    <a href="#contacto" class="link">Contacto</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+                <section class="footer__up__icon">
+                    <div class="footer__up__icon__box">
+                        <a href= "#inicio"><img src="img/arrow-up.svg" alt="Icono para volver arriba" class="img"></a>
+                    </div>
+                </section>
+                <p class="footer__copyright">© 2023 LB| Todos los derechos reservados</p>
+            </div>
+        </footer>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+</html>

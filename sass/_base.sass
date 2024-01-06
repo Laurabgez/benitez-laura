@@ -1,0 +1,92 @@
+@use "variables"
+@use "keyframes"
+
+html
+  scroll-behavior: smooth
+body
+  background-color: variables.$color-white
+  font-family: variables.$font-text
+  margin-top: 5rem
+.hidden__link
+  display: none
+.container
+  margin-inline: auto
+  max-width: 1100px
+  padding: 1rem
+.img
+  display: block
+  width: 100%
+  object-fit: cover
+  object-position: center
+.ul__reset
+  display: flex
+  flex-wrap: wrap
+  list-style: none
+  padding: 0
+  margin: 0
+.link
+  display: inline-block
+  color: inherit
+  text-decoration: none
+  padding: 1rem
+  &:hover
+    border-bottom: 1px solid variables.$color-blue
+    box-shadow: 0px 2px 2px -2px variables.$color-blue
+.text
+  font-size: variables.$size-m
+.title__section
+  font-family: variables.$font-title
+  font-weight: initial
+  text-transform: capitalize
+  font-size: variables.$size-xl
+  color: variables.$color-red
+.subtitle
+  font-weight: lighter
+  text-align: center
+  font-family: variables.$font-title
+  font-size: 1.5rem
+.has-mobile
+  display: none
+  @media (width < 600px)
+    display: initial
+.has-desktop
+  display: initial
+  @media (width < 600px)
+    display: none
+
+/*Cookies*/
+.container__cookies
+  max-width: 100vw
+  background-color: variables.$color-blue
+  padding: 1rem
+  position: fixed
+  right: 0
+  bottom: 0
+  left: 0
+  animation-name: ani-cookies
+  animation-duration: 1s
+  animation-delay: 4s
+  opacity: 0
+  animation-fill-mode: forwards
+  z-index: 999
+.container--none
+  display: none
+.form__text
+  color: white
+.button__cookies__box
+  margin-top: variables.$size-s
+  display: flex
+  justify-content: center
+  gap: variables.$size-s
+.button-cookies
+  background-color: variables.$color-white
+  display: inline-block
+  padding-block: 0.8rem
+  padding-inline: 1rem
+  border-radius: variables.$size-s
+  color: variables.$color-blue
+  border: 1px solid variables.$color-white
+  transition: 1s
+  &:hover
+    transform: scale(1.1)
+

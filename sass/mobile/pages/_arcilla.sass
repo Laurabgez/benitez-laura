@@ -1,0 +1,41 @@
+@use "../../variables"
+@use "../../base"
+
+.arcilla
+  &__description
+    display: grid
+    grid-template-columns: 1fr
+    grid-template-rows: repeat(2, 1fr)
+    justify-content: center
+    align-items: center
+  &__text
+    line-height: 2
+  &__img
+    grid-column: 1 / 2
+    grid-row: 2 / 3
+    width: 15rem
+.cards
+  display: flex
+  justify-content: space-around
+  flex-wrap: wrap
+  gap: variables.$size-s
+  &__item
+    min-width: 20rem
+    min-height: 20rem
+    border-radius: variables.$size-l
+    background-image: url("../img/marco-chino.png")
+    object-position: center
+    object-fit: cover
+    background-repeat: no-repeat
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: variables.$size-s
+    transition: 1s
+    &:hover
+      transform: rotateY(20deg)
+  &__name
+    text-transform: uppercase
+    font-family: variables.$font-title
+    font-weight: lighter

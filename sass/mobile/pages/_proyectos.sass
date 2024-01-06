@@ -1,0 +1,76 @@
+@use "../../variables"
+@use "../../base"
+
+.nav__proyectos
+  gap: variables.$size-l
+  justify-content: center
+.button__gallery
+  background-color: variables.$color-white
+  color: variables.$color-blue
+  border: 1px solid variables.$color-blue
+  padding: variables.$size-m
+  &-start
+    border-top-left-radius: variables.$size-m
+  &-end
+    border-bottom-right-radius: variables.$size-m
+  &-active
+    background-color: variables.$color-blue
+    color: variables.$color-white
+    border: variables.$color-blue
+  &:hover
+    background-color: variables.$color-blue
+    color: variables.$color-white
+    border: variables.$color-blue
+.masonry
+  margin-top: variables.$size-m
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  grid-template-rows: repeat(7, 1fr)
+  height: 80vh
+  gap: 1rem
+  &__image
+    height: 100%
+    width: 100%
+    border-radius: variables.$size-xl
+    filter: grayscale(100%)
+    &--show
+      display: block
+      filter: initial
+    &--1
+      grid-column: 1 / 2
+      grid-row: 1 / 3
+    &--2
+      grid-column: 1 / 2
+      grid-row: 3 / 5
+    &--3
+      display: none
+    &--4
+      display: none
+    &--5
+      grid-column: 1 / 2
+      grid-row: 5 / 7
+    &--6
+      display: none
+    &--7
+      grid-column: 2 / 3
+      grid-row: 2 / 4
+    &--8
+      display: none
+    &--9
+      grid-column: 2 / 3
+      grid-row: 4 / 6
+    &--10
+      display: none
+    &--11
+      grid-column: 2 / 3
+      grid-row: 6 / 8
+    &--12
+      display: none
+    &--13
+      display: none
+    &--radius-left
+      border-top-left-radius: variables.$size-xl
+      border-bottom-right-radius: variables.$size-xl
+    &--radius-right
+      border-top-right-radius: variables.$size-xl
+      border-bottom-left-radius: variables.$size-xl

@@ -1,0 +1,26 @@
+@use "../../variables"
+@use "../../base"
+
+.aboutme
+  &__marco
+    $color__aboutme: #495057
+    background-color: $color__aboutme
+    & > .container
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      align-items: center
+      gap: 6rem
+  &__text
+    color: variables.$color-white
+    width: 42rem
+    line-height: 2
+  &__cite
+    font-style: italic
+    color: variables.$color-white
+  &__image__section
+    width: 20rem
+  &__image
+    border-radius: variables.$size-m
+.blockquote
+  margin: 0
